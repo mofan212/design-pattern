@@ -4,7 +4,7 @@ import com.google.common.eventbus.Subscribe;
 import indi.mofan.eventbus.event.SuccessfulEvent;
 
 /**
- * @author cheny
+ * @author mofan
  * @date 2021/8/10 15:36
  */
 public class SuccessfulListener {

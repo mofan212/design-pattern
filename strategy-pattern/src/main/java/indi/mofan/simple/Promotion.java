@@ -1,7 +1,7 @@
 package indi.mofan.simple;
 
 /**
- * @author cheny 2021/2/27
+ * @author mofan 2021/2/27
  */
 public interface Promotion {
     /**

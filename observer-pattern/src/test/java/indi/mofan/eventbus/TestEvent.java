@@ -8,7 +8,7 @@ import indi.mofan.eventbus.listener.SuccessfulListener;
 import org.junit.Test;
 
 /**
- * @author cheny
+ * @author mofan
  * @date 2021/8/10 15:49
  */
 public class TestEvent {

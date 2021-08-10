@@ -4,7 +4,7 @@ import indi.mofan.eventbus.event.FailureEvent;
 import org.greenrobot.eventbus.Subscribe;
 
 /**
- * @author cheny
+ * @author mofan
  * @date 2021/8/10 16:00
  */
 public class FailureListener {

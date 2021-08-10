@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * @author cheny 2021/2/3
+ * @author mofan 2021/2/3
  */
 public class PersonTest {
     @Test

@@ -1,10 +1,14 @@
 package indi.mofan;
 
+import indi.mofan.cglib.AbstractStudentService;
+import indi.mofan.cglib.Student;
 import indi.mofan.proxy.OrderService;
 import indi.mofan.proxy.OrderServiceProxy;
 import indi.mofan.proxy.User;
 import indi.mofan.proxy.UserService;
 import indi.mofan.proxy.UserServiceProxy;
+import net.sf.cglib.proxy.Enhancer;
+import net.sf.cglib.proxy.MethodInterceptor;
 import org.junit.Test;
 
 /**
@@ -22,5 +26,18 @@ public class TestProxy {
 
         OrderService orderService = new OrderServiceProxy();
         orderService.showOrder();
+    }
+
+    @Test
+    public void testAbstractCglibProxy() {
+        Enhancer enhancer = new Enhancer();
+        enhancer.setClassLoader(Thread.currentThread().getContextClassLoader());
+        enhancer.setSuperclass(AbstractStudentService.class);
+        enhancer.setCallback((MethodInterceptor) (obj, method, args, proxy) -> {
+            System.out.println("--- Abstract CGLib ---");
+            return proxy.invokeSuper(obj, args);
+        });
+        AbstractStudentService serviceProxy = (AbstractStudentService) enhancer.create();
+        serviceProxy.update(new Student());
     }
 }

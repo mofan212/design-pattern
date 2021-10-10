@@ -18,6 +18,8 @@ public class CglibProxy {
         enhancer.setCallback((MethodInterceptor) (o, method, params, methodProxy) -> {
             System.out.println("--- cglib start ---");
             Object ret = method.invoke(studentService, params);
+//            Object ret = methodProxy.invoke(studentService, params);
+//            Object ret = methodProxy.invokeSuper(o, params);
             System.out.println("--- cglib end ---");
             return ret;
         });

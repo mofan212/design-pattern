@@ -9,7 +9,7 @@ import indi.mofan.proxy.UserService;
 import indi.mofan.proxy.UserServiceProxy;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author mofan

@@ -3,8 +3,8 @@ package indi.mofan;
 import indi.mofan.handler.ConcreteHandlerOne;
 import indi.mofan.handler.ConcreteHandlerTwo;
 import indi.mofan.handler.Handler;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author mofan
@@ -19,14 +19,14 @@ public class ChainTest {
         handlerOne.setNext(handlerTwo);
         // 提交请求
         String response = handlerOne.handleRequest("one");
-        Assert.assertEquals("one", response);
+        Assertions.assertEquals("one", response);
         response = handlerOne.handleRequest("two");
-        Assert.assertEquals("two", response);
+        Assertions.assertEquals("two", response);
         try {
             handlerOne.handleRequest("three");
-            Assert.fail();
+            Assertions.fail();
         } catch (Exception e) {
-            Assert.assertTrue(e instanceof UnsupportedOperationException);
+            Assertions.assertTrue(e instanceof UnsupportedOperationException);
         }
     }
 }

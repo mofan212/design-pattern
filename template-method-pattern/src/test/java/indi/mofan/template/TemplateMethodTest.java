@@ -2,7 +2,7 @@ package indi.mofan.template;
 
 import indi.mofan.concrete.ConcreteClass;
 import indi.mofan.concrete.HookConcreteClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author mofan

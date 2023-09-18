@@ -5,7 +5,7 @@ import indi.mofan.jdk.NumberObserver;
 import indi.mofan.pattern.ConcreteObserverOne;
 import indi.mofan.pattern.ConcreteObserverTwo;
 import indi.mofan.pattern.ConcreteSubject;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author mofan

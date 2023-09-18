@@ -4,10 +4,10 @@ import indi.mofan.concrete.Student;
 import indi.mofan.director.Person2Director;
 import indi.mofan.entity.Person;
 import indi.mofan.entity.Person2;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * @author mofan 2021/2/3

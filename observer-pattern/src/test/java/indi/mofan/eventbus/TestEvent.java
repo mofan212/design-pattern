@@ -5,7 +5,7 @@ import indi.mofan.eventbus.event.FailureEvent;
 import indi.mofan.eventbus.event.SuccessfulEvent;
 import indi.mofan.eventbus.listener.FailureListener;
 import indi.mofan.eventbus.listener.SuccessfulListener;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author mofan

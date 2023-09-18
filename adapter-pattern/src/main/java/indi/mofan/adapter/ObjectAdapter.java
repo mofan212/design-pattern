@@ -1,7 +1,7 @@
 package indi.mofan.adapter;
 
 import indi.mofan.adaptee.Adaptee;
-import indi.mofan.target.Target;
+import indi.mofan.Target;
 
 /**
  * @author mofan
@@ -9,11 +9,10 @@ import indi.mofan.target.Target;
  */
 public class ObjectAdapter implements Target {
 
-    private Adaptee adaptee;
+    private final Adaptee adaptee;
 
-    public ObjectAdapter(Adaptee adaptee)
-    {
-        this.adaptee=adaptee;
+    public ObjectAdapter(Adaptee adaptee) {
+        this.adaptee = adaptee;
     }
 
     @Override

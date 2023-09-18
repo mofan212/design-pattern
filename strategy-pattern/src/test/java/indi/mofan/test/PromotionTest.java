@@ -4,7 +4,7 @@ import indi.mofan.simple.Context;
 import indi.mofan.simple.PromotionPlanA;
 import indi.mofan.simple.PromotionPlanB;
 import indi.mofan.simple.PromotionPlanC;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Comparator;

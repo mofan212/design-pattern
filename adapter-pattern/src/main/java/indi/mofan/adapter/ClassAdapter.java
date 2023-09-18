@@ -1,7 +1,7 @@
 package indi.mofan.adapter;
 
 import indi.mofan.adaptee.Adaptee;
-import indi.mofan.target.Target;
+import indi.mofan.Target;
 
 /**
  * @author mofan

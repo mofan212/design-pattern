@@ -3,8 +3,9 @@ package indi.mofan.test;
 import indi.mofan.duck.PekingDuck;
 import indi.mofan.duck.ToyDuck;
 import indi.mofan.duck.WildDuck;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 
 /**
  * @author mofan 2021/2/27
@@ -15,17 +16,17 @@ public class DuckTest {
         PekingDuck pekingDuck = new PekingDuck();
         try {
             pekingDuck.fly();
-            Assert.fail();
+            Assertions.fail();
         } catch (Exception e) {
-            Assert.assertTrue(e instanceof UnsupportedOperationException);
+            Assertions.assertTrue(e instanceof UnsupportedOperationException);
         }
 
         ToyDuck toyDuck = new ToyDuck();
         try {
             toyDuck.swim();
-            Assert.fail();
+            Assertions.fail();
         } catch (Exception e) {
-            Assert.assertTrue(e instanceof UnsupportedOperationException);
+            Assertions.assertTrue(e instanceof UnsupportedOperationException);
         }
 
         WildDuck wildDuck = new WildDuck();

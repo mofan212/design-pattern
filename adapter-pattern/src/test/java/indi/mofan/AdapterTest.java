@@ -6,10 +6,7 @@ import indi.mofan.adaptee.TwoWayAdaptee;
 import indi.mofan.adapter.ClassAdapter;
 import indi.mofan.adapter.ObjectAdapter;
 import indi.mofan.adapter.TwoWayAdapter;
-import indi.mofan.target.Target;
-import indi.mofan.target.TargetRealize;
-import indi.mofan.target.TwoWayTarget;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author mofan

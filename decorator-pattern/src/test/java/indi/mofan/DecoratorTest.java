@@ -3,7 +3,7 @@ package indi.mofan;
 import indi.mofan.component.Component;
 import indi.mofan.component.ConcreteComponent;
 import indi.mofan.decorator.ConcreteDecorator;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author mofan

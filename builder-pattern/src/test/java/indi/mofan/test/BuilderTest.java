@@ -2,8 +2,9 @@ package indi.mofan.test;
 
 import indi.mofan.builder.Builder;
 import indi.mofan.entity.Student;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author mofan
@@ -16,7 +17,7 @@ public class BuilderTest {
                 .with(Student::setName, "mofan")
                 .with(Student::setAge, 20)
                 .build();
-        Assert.assertEquals("mofan", student.getName());
-        Assert.assertEquals(20, student.getAge());
+        assertEquals("mofan", student.getName());
+        assertEquals(20, student.getAge());
     }
 }

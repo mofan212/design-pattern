@@ -1,7 +1,7 @@
 package indi.mofan;
 
-import indi.mofan.jdk.NumberObservable;
-import indi.mofan.jdk.NumberObserver;
+import indi.mofan.jdk.EventSource;
+import indi.mofan.jdk.EventListener;
 import indi.mofan.pattern.ConcreteObserverOne;
 import indi.mofan.pattern.ConcreteObserverTwo;
 import indi.mofan.pattern.ConcreteSubject;
@@ -14,12 +14,12 @@ import org.junit.jupiter.api.Test;
 public class TestObserver {
     @Test
     public void testJdkObserver() {
-        // 创建被观察者对象
-        NumberObservable observable = new NumberObservable();
-        // 为被观察者添加观察者
-        observable.addObserver(new NumberObserver());
+        // 创建事件源
+        EventSource observable = new EventSource();
+        // 设置监听器
+        observable.addListener(new EventListener());
         // 调用方法，改变数值
-        observable.changeNum(1);
+        observable.changeNum(0);
         observable.changeNum(100);
     }
 

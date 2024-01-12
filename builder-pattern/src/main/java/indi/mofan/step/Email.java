@@ -25,23 +25,23 @@ public class Email {
         return new Builder();
     }
 
-    public interface FromStep {
+    public sealed interface FromStep permits Builder {
         ToStep from(EmailAddress from);
     }
 
-    public interface ToStep {
+    public sealed interface ToStep permits Builder {
         SubjectStep to(List<EmailAddress> to);
     }
 
-    public interface SubjectStep {
+    public sealed interface SubjectStep permits Builder {
         ContentStep subject(String subject);
     }
 
-    public interface ContentStep {
-        Builder content(String content);
+    public sealed interface ContentStep permits Builder {
+        Build content(String content);
     }
 
-    public interface Build {
+    public sealed interface Build permits Builder {
         /**
          * 构造 Email 对象
          */
@@ -67,19 +67,13 @@ public class Email {
         this.content = builder.content;
     }
 
-    public static class Builder implements FromStep, ToStep, SubjectStep, ContentStep, Build {
+    public final static class Builder implements FromStep, ToStep, SubjectStep, ContentStep, Build {
         private EmailAddress from;
         private List<EmailAddress> to;
-        private List<EmailAddress> cc;
-        private List<EmailAddress> bcc;
         private String subject;
         private String content;
-
-        private static void requireNotEmptyList(List<?> list) {
-            if (CollectionUtils.isEmpty(list)) {
-                throw new RuntimeException();
-            }
-        }
+        private final List<EmailAddress> cc = new ArrayList<>();
+        private final List<EmailAddress> bcc = new ArrayList<>();
 
         @Override
         public Email build() {
@@ -95,7 +89,9 @@ public class Email {
 
         @Override
         public SubjectStep to(List<EmailAddress> to) {
-            requireNotEmptyList(to);
+            if (CollectionUtils.isEmpty(to)) {
+                throw new RuntimeException();
+            }
             this.to = new ArrayList<>(to);
             return this;
         }
@@ -108,7 +104,7 @@ public class Email {
         }
 
         @Override
-        public Builder content(String content) {
+        public Build content(String content) {
             Objects.requireNonNull(content);
             this.content = content;
             return this;
@@ -116,15 +112,13 @@ public class Email {
 
         @Override
         public Build cc(List<EmailAddress> cc) {
-            requireNotEmptyList(cc);
-            this.cc = new ArrayList<>(cc);
+            this.cc.addAll(CollectionUtils.emptyIfNull(cc));
             return this;
         }
 
         @Override
         public Build bcc(List<EmailAddress> bcc) {
-            requireNotEmptyList(bcc);
-            this.bcc = new ArrayList<>(bcc);
+            this.bcc.addAll(CollectionUtils.emptyIfNull(bcc));
             return this;
         }
     }

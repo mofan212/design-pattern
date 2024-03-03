@@ -5,7 +5,7 @@
 - [【设计模式】责任链模式](https://mofan212.github.io/posts/Design-Pattern-Chain-of-Responsibility-Pattern/)
 - [【设计模式】装饰器模式](https://mofan212.github.io/posts/Design-Pattern-Decorator-Pattern/)
 - [【设计模式】工厂模式](https://mofan212.github.io/posts/Design-Pattern-Factory-Pattern/)
-- 中介者模式（🏗 施工中...）
+- [【设计模式】中介者模式](https://mofan212.github.io/posts/Design-Pattern-Mediator-Pattern/)
 - [【设计模式】观察者模式](https://mofan212.github.io/posts/Design-Pattern-Observer-Pattern/)
 - [【设计模式】代理模式](https://mofan212.github.io/posts/Design-Pattern-Proxy-Pattern/)
 - [【设计模式】单例模式](https://mofan212.github.io/posts/Design-Pattern-Singleton-Pattern/)

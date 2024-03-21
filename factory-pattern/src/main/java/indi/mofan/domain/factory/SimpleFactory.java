@@ -16,13 +16,10 @@ public final class SimpleFactory {
      * @return 生产出的产品
      */
     public static Product makeProduct(int productNum) {
-        switch (productNum) {
-            case 1:
-                return new ConcreteProduct1();
-            case 2:
-                return new ConcreteProduct2();
-            default:
-                return null;
-        }
+        return switch (productNum) {
+            case 1 -> new ConcreteProduct1();
+            case 2 -> new ConcreteProduct2();
+            default -> null;
+        };
     }
 }

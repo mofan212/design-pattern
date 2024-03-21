@@ -3,6 +3,7 @@ package indi.mofan;
 import indi.mofan.domain.factory.another.AbstractFactory;
 import indi.mofan.domain.factory.another.ConcreteFactory1;
 import indi.mofan.domain.factory.another.ConcreteFactory2;
+import indi.mofan.domain.factory.another.FactoryMaker;
 import indi.mofan.domain.product.ConcreteProduct11;
 import indi.mofan.domain.product.ConcreteProduct12;
 import indi.mofan.domain.product.ConcreteProduct21;
@@ -33,6 +34,25 @@ public class AbstractFactoryTest {
         Assertions.assertNotNull(product12);
         Assertions.assertTrue(product12 instanceof ConcreteProduct12);
         Product2 product22 = concreteFactory2.newProduct2();
+        Assertions.assertNotNull(product22);
+        Assertions.assertTrue(product22 instanceof ConcreteProduct22);
+    }
+
+    @Test
+    public void testCreateByFactoryMaker() {
+        AbstractFactory factory1 = FactoryMaker.makeFactory(FactoryMaker.FactoryType.ONE);
+        Product1 product11 = factory1.newProduct1();
+        Assertions.assertNotNull(product11);
+        Assertions.assertTrue(product11 instanceof ConcreteProduct11);
+        Product2 product21 = factory1.newProduct2();
+        Assertions.assertNotNull(product21);
+        Assertions.assertTrue(product21 instanceof ConcreteProduct21);
+
+        AbstractFactory factory2 = FactoryMaker.makeFactory(FactoryMaker.FactoryType.TWO);
+        Product1 product12 = factory2.newProduct1();
+        Assertions.assertNotNull(product12);
+        Assertions.assertTrue(product12 instanceof ConcreteProduct12);
+        Product2 product22 = factory2.newProduct2();
         Assertions.assertNotNull(product22);
         Assertions.assertTrue(product22 instanceof ConcreteProduct22);
     }
